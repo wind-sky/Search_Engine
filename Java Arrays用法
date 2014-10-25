@@ -1,0 +1,46 @@
+package com.test.demo;
+import java.util.Arrays;
+public class TestArrays
+{
+ public static void main(String[] args)
+ {
+  int[] array=new int[5];
+  //填充数组
+  Arrays.fill(array, 5);
+  System.out.println("填充数组：Arrays.fill(array,5)");
+  TestArrays.output(array);
+  
+  Arrays.fill(array,2,4,8);
+  System.out.println("将数组的第二个和第三个元素赋值为8：Arrays.fill(array,2,4,8)");
+  TestArrays.output(array);
+  
+  //对整个数组元素进行排序
+  int[] array1={7,8,3,2,12,6,3,5,4};
+  Arrays.sort(array1);
+  System.out.println("对整个数组元素进行排序：Arrays.sort(array1)");
+  TestArrays.output(array1);
+  
+  //比较数组元素是否相等
+  System.out.println("比较数组元素是否相等:Arrays.equals(array, array1):"+"\n"+Arrays.equals(array, array1));
+  int[] array2=array1.clone();
+  System.out.println("比较数组元素是否相等:Arrays.equals(array2, array1):"+"\n"+Arrays.equals(array2, array1));
+  
+  //使用二分搜素算法查找指定元素所在的下标（必须是排好序的，否则结果不正确），如果不存在就返回负数
+  Arrays.sort(array1);
+  TestArrays.output(array1);
+  System.out.println("元素3在array1中的位置：Arrays.binarySearch(array1, 3)"+"\n"+Arrays.binarySearch(array1, 3));
+  
+ }
+ //输出数组元素
+    public static void output(int[] array)
+    {
+     if(array!=null)
+     {
+      for(int i=0;i<array.length;i++)
+      {
+       System.out.print(array[i]+" ");
+      }
+     }
+     System.out.println();
+    }
+}
